@@ -16,10 +16,10 @@ print("Скорость ветра:", data["wind"]["speed"], " \r\n")
 res = requests.get("http://api.openweathermap.org/data/2.5/forecast",
              params={'q': city, 'units': 'metric', 'lang': 'ru', 'APPID': apiKey})
 data = res.json()
-print(res.text)
 for i in data["list"]:
     print("Дата <", i['dt_txt'], "> \r\nТемпература <", '{0:+3.0f}'.format(i['main']['temp']),
-          "> \r\nПогодные условия <", i['weather'][0]['description'], ">")
+          "> \r\nПогодные условия <", i['weather'][0]['description'], ">" "> \r\n Скорость ветра <", i['wind']["speed"], ">" 
+          "> \r\n Видимость <", i['visibility'], ">" )
     print("____________________________")
 
 
